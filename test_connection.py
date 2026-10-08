@@ -31,3 +31,13 @@ def test_images_produits_sont_differentes(page: Page):
     sources = [images.nth(i).get_attribute("src") for i in range(images.count())]
 
     assert len(set(sources)) > 1, f"Toutes les images pointent vers la même source : {sources[0]}"
+
+def test_utilisateur_bloque(page: Page):
+    se_connecter(page, "locked_out_user", "secret_sauce")
+
+    erreur = page.locator("[data-test='error']")
+    expect(erreur).to_be_visible()
+    expect(erreur).to_contain_text("locked out")
+
+    # On n'a pas atteint la page produits
+    expect(page.locator(".title")).to_have_count(0)
