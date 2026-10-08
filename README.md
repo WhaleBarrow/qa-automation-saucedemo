@@ -6,16 +6,16 @@ de testeur QA.
 
 ## Ce que ce projet démontre
 - Automatisation de tests fonctionnels web (Python, Playwright, pytest)
-- Cas de test positifs et négatifs (connexion valide  invalide)
+- Cas de test positifs et négatifs (connexion valide/invalide)
 - Détection et documentation d'un bug réel (compte `problem_user`)
 - Suivi des cas de test et des anomalies dans Jira
 
 ## Tests inclus
- Test  Objectif  Résultat attendu 
----------
- test_connexion_reussie  Connexion avec identifiants valides  Page Products affichée 
- test_connexion_mauvais_mot_de_passe  Connexion avec mauvais mot de passe  Message d'erreur affiché 
- test_images_produits_sont_differentes  Détecter le bug des images identiques  XFAIL (bug connu, ticket Jira) 
+| TEST--------------------------------- | OBJECTIF----------------------------- | RESULTAT ATTENDU-------------- |
+|---------------------------------------|---------------------------------------|--------------------------------|
+| test_connexion_reussie--------------- | Connexion avec identifiants valides-- | Page Products affichée-------- |
+| test_connexion_mauvais_mot_de_passe-- | Connexion avec mauvais mot de passe-- | Message d'erreur affiché------ |
+| test_images_produits_sont_differentes | Détecter le bug des images identiques | XFAIL (bug connu, ticket Jira) |
 
 ## Installation et lancement
 ```
